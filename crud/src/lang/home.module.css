@@ -1,0 +1,398 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Impede rolagem horizontal */
+ 
+}
+
+/* Alinhar os elementos lado a lado e manter o fundo com o gradiente */
+.primeiro {
+  justify-content: space-between; /* Dá espaço entre os elementos */
+  background-color: #073980;
+  width: 100%;
+  height: 100vh; /* Ajuste conforme necessário */
+text-align: center
+}
+
+
+
+.link {
+  color: inherit; /* Herda a cor do elemento pai */
+  text-decoration: none; /* Remove a decoração do link (underline) */
+}
+
+/* Estilos do título */
+.Titulo {
+  color:  #ffffff; /* Torna o texto transparente para exibir o gradiente */
+  font-size: 2.5rem; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+text-align: center;
+padding-top: 15%;
+}
+
+
+.subTitulo {
+  color: #ffffff; /* Branco para o subtítulo */
+  font-size: 1rem; /* Tamanho da fonte */
+  margin-top: 2%;
+  font-weight: none;
+}
+
+.logo {
+  width: 80%; /* Controla o tamanho da logo */
+  height: auto; /* Mantém a proporção original da imagem */
+  margin-left: 10%;
+  border-radius: 50%;
+}
+
+.botao {
+  background-color: #1a1f71; /* Dourado para o botão */
+  color: #ffffff; /* Preto para o texto */
+  width: 25%; /* Aumenta a largura do botão */
+  padding: 14px 28px; /* Aumenta o espaçamento interno para tornar o botão mais largo */
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+  border-radius: 50px; /* Bordas arredondadas */
+  border: 2px solid #ffffff; /* Borda dourada */
+  text-align: center; /* Alinha o texto no centro */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves para efeitos de hover */
+  cursor: pointer; /* Altera o cursor para indicar que é um botão clicável */
+  margin: 0.5rem;
+  margin-top: 3%;
+
+}
+
+/* Efeito de hover para o botão */
+.botao:hover {
+  background-color: #1877F2; /* Dourado mais escuro para o hover */
+ 
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+}
+
+
+.cardsContainer {
+  display: flex; /* Usando Flexbox para alinhar os cards */
+  justify-content: space-between; /* Espaçamento entre os cards */
+  gap: 20px; /* Adiciona um espaço entre os cards */
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se não couberem */
+  padding: 20px; /* Padding ao redor dos cards */
+}
+
+.beneficio {
+  text-align: center;
+  /* Centraliza o texto do título */
+  margin: 0 auto;
+  /* Centraliza o contêiner */
+  padding: 20px;
+}
+
+.cardsContainer {
+  display: flex;
+  /* Ativa o layout flexbox */
+  justify-content: center;
+  /* Alinha os cards horizontalmente no centro */
+  gap: 20px;
+  /* Adiciona espaçamento entre os cards */
+  flex-wrap: wrap;
+  /* Permite que os cards quebrem para uma nova linha se necessário */
+  margin-top: 20px;
+  /* Espaçamento entre o título e os cards */
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  /* Largura fixa para os cards */
+  text-align: center;
+  /* Centraliza o conteúdo dentro de cada card */
+}
+
+.cardIcon {
+  font-size: 50px;
+  /* Ajusta o tamanho do ícone */
+  color: #007bff;
+  /* Define uma cor para o ícone */
+  margin-bottom: 10px;
+  /* Espaçamento abaixo do ícone */
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.avaliacoes{
+  background-color:#2D3748;
+  
+}
+.titulo2 {
+  color: rgba(0, 0, 0, 0.699);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 6%;
+}
+
+.titulo3 {
+  color:#ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 4%; 
+  padding-top: 4%;
+}
+
+.cardsContainerEmpresa {
+  display: flex; /* Ativa o Flexbox */
+  justify-content: center; /* Alinha os itens no centro na horizontal */
+  align-items: center; /* Alinha os itens no centro na vertical */
+  gap: 20px; /* Adiciona um espaço entre os cards */
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se não couberem */
+  padding: 20px; /* Padding ao redor dos cards */
+}
+
+.cardEmpresa {
+  background-color: #fff; /* Cor de fundo dos cards */
+  width: 70%; /* Cada card ocupa 70% da largura do contêiner */
+  padding: 20px; /* Padding interno dos cards */
+  box-shadow: 1px 7px 4px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar os cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeitos suaves de hover */
+  margin-bottom: 4%;
+}
+
+.cardEmpresa:hover {
+  transform: translateY(-10px); /* Levanta o card quando o mouse passa por cima */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+}
+.cardTitleEmpresa {
+  font-size: 1.5rem; /* Tamanho do título */
+  font-weight: bold; /* Deixa o título em negrito */
+  color: #000000; /* Cor do título */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+.cardDescriptionEmpresa {
+  font-size: 1rem; /* Tamanho da descrição */
+  color: #000000; /* Cor da descrição */
+  line-height: 1.5; /* Espaçamento entre as linhas */
+}
+
+.cardIconEmpresa {
+  font-size: 3rem; /* Tamanho do ícone */
+  color: #000000;  /* Cor do ícone, você pode ajustar conforme preferir */
+  margin-bottom: 15px; /* Espaçamento entre o ícone e o título */
+}
+.funcionamento {
+  padding-top: 3%;
+  padding-bottom: 8%;
+  background-color: #2c3968;
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar toda a área disponível */
+  background-position: center; /* Centraliza a imagem */
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.img {
+  max-width: 750px; /* Limita a largura máxima da imagem */
+  width: 100%; /* Ajusta a largura da imagem para 50% da largura disponível */
+  height: auto; /* Mantém a proporção da altura */
+  border-radius: 8px; /* Bordas arredondadas para a imagem */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem deformar */
+  margin-left: 2%; /* Espaçamento à esquerda */
+  
+  /* Sombra vibrante preta */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), 0 6px 15px rgba(0, 0, 0, 0.9);
+}
+
+
+.tituloText {
+  font-size: 2rem; /* Tamanho do texto */
+  color: #ffffff; /* Cor do texto */
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 1%;
+}
+
+.text {
+  font-size: 1.2rem; /* Tamanho do texto */
+  color: #ffffff; /* Cor do texto */
+  
+}
+
+.rodape {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.contato {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.infoContato p {
+  margin-bottom: 5px;
+}
+
+.redesSociais p {
+  margin-bottom: 10px;
+}
+
+.redesSociais a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.redesSociais a:hover {
+  text-decoration: underline;
+}
+
+.direitosAutorais p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .primeiro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .Titulo {
+    font-size: 2rem;
+    margin-bottom: 5%;
+   
+  }
+
+  .botao {
+    width: 60%;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Titulo {
+    font-size: 1.5rem;
+    
+    margin-bottom: 5%;
+  }
+
+  .botao {
+    width: 80%;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .imgContainer {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .tituloText {
+    margin-left: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #000000;
+  }
+
+  .text {
+    text-align: center;
+    color: #000000;
+  }
+
+  .img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .Titulo {
+    font-size: 1.2rem;
+    padding-top: 30%;
+  }
+
+  .subTitulo {
+    font-size: 0.8rem;
+  }
+
+  .botao {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+
+  .img {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .tituloText {
+    font-size: 1rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+}

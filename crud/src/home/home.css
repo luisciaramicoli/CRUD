@@ -1,0 +1,71 @@
+/* Estilos para a tabela */
+.tabela {
+    margin: 20px auto;
+    /* Centraliza a tabela na página */
+    width: 90%;
+    /* Define a largura da tabela */
+    max-width: 1200px;
+    /* Limita a largura máxima */
+    overflow-x: auto;
+    /* Adiciona rolagem horizontal em telas pequenas */
+    background-color: #f9f9f9;
+    /* Cor de fundo para destacar a tabela */
+    border-radius: 10px;
+    /* Borda arredondada */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para destacar a tabela */
+}
+
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Remove espaços entre células */
+    text-align: left;
+    /* Alinha o texto à esquerda */
+}
+
+.tabela th,
+.tabela td {
+    padding: 12px 15px;
+    /* Espaçamento interno das células */
+    border: 1px solid #ddd;
+    /* Borda leve entre células */
+}
+
+.tabela th {
+    background-color: #007bff;
+    /* Cor do cabeçalho */
+    color: #fff;
+    /* Texto branco no cabeçalho */
+    font-weight: bold;
+    /* Texto em negrito no cabeçalho */
+    text-transform: uppercase;
+    /* Texto em maiúsculas */
+}
+
+.tabela tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Fundo alternado nas linhas pares */
+}
+
+.tabela tr:hover {
+    background-color: #e6f7ff;
+    /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para a rolagem em telas pequenas */
+.tabela::-webkit-scrollbar {
+    height: 8px;
+    /* Altura da barra de rolagem */
+}
+
+.tabela::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    /* Cor da barra de rolagem */
+    border-radius: 10px;
+}
+
+.tabela::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Cor do trilho da barra */
+}

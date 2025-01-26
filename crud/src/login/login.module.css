@@ -1,0 +1,257 @@
+/* Estrutura geral */
+.tudo {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around; /* Espaço entre info e form */
+    align-items: center;
+    animation: fadeIn 1s ease-out; /* Animação de fadeIn */
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    background-size: cover; /* Faz com que a imagem ocupe toda a tela */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa no scroll (opcional) */
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background:#0530ad;
+    animation: fadeIn 1s ease-out; /* Animação de fadeIn */
+}
+  .info {
+    gap: 1.5rem;
+    width: 60vh;
+    max-width: 100%; /* Ajusta em telas menores */
+   background-color:  azure;
+   color: black;
+   height: 70vh;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 60vh;
+    max-width: 100%; /* Ajusta em telas menores */
+    padding: 2rem;
+}
+.divIcone{
+    text-align: center;
+    margin-top: 10%;
+}
+.icone{
+    width: 50%;
+}
+  /* Cabeçalho */
+
+  
+  /* Logo */
+  .logoInicio {
+    color: white;
+    width: 3%;
+    margin-left: 1%;
+  }
+  .logo {
+    width: 100%;
+  }
+  
+  .text {
+    color: #ffffff;
+  }
+  .link {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    transition: background-color 300ms;
+  }
+  
+  .linkRecuperar:hover {
+    color: #a01919;
+  }
+  .link:hover {
+    color: #000000;
+font-size: 1.4rem;
+  }
+  
+  /* Formulário */
+
+  
+  
+  
+  /* Título */
+  .Titulo {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+  }
+  .Titulo2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    margin-top: 7%;
+    font-weight: bold;
+  }
+  .subTitulo {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .senhaEsquecida {
+    color: red;
+    font-size: 13px;
+    padding-left: 17%;
+  }
+  
+  .senhaEsquecida:hover {
+    color: #a01919;
+  }
+  
+  .label {
+    color: #ffffff;
+  }
+  
+  /* Campos de entrada */
+  /* Campos de entrada */
+.input {
+    appearance: none; /* Remove o estilo padrão do navegador */
+    -webkit-appearance: none; /* Para navegadores baseados no WebKit */
+    -moz-appearance: none; /* Para navegadores baseados no Gecko */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+  }
+  
+  .inputWithIcon {
+    position: relative;
+  }
+  /* Estilo para o estado de autofill */
+  .inputWithIcon input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff; /* Define a cor do texto */
+    -webkit-box-shadow: 0 0 0px 1000px #0F172A inset; /* Alinha o fundo ao estilo do campo */
+    box-shadow: 0 0 0px 1000px #0F172A inset;
+    transition: background-color 5000s ease-in-out 0s; /* Para evitar mudanças indesejadas */
+  }
+  
+  /* Para navegadores sem suporte ao prefixo -webkit */
+  .inputWithIcon input:autofill {
+    background-color: #0F172A; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+  }
+  
+  .inputWithIcon .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
+  
+  .inputWithIcon input {
+    width: 100%;
+    margin: 12px 15px;
+    
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(225, 225, 225, 0.5);
+    font-size: 1rem;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+  
+  .inputWithIcon input:focus {
+    border-bottom: 2px solid #d2deff;
+   
+    outline: none;
+  }
+  
+  
+  /* Mensagem de erro */
+  .error {
+    color: rgb(175, 0, 0);
+    font-size: 1.2rem;
+    margin-left: 50%;
+  }
+  
+  /* Botão */
+  .input button {
+    width: 100%;
+    max-width: 200px; /* Limita largura máxima */
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(253, 253, 253);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    color: black;
+    text-align: center;
+  }
+  
+  .input button:hover {
+    background-color: rgba(255, 255, 255, 0.507);
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .form {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .cabecalho {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .link {
+      font-size: 0.9rem;
+    }
+  
+    .Titulo {
+      font-size: 1.8rem;
+    }
+  
+    .inputWithIcon input {
+      font-size: 0.9rem;
+    }
+  
+    .input button {
+      width: 80%;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 5%;
+    }
+  
+    .cabecalho {
+      flex-direction: column;
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+  
+    .Titulo {
+      font-size: 1.5rem;
+    }
+  
+    .inputWithIcon input {
+      font-size: 0.9rem;
+      padding: 10px 15px;
+    }
+  
+    .input button {
+      width: 90%;
+      font-size: 0.9rem;
+    }
+  }
+  
