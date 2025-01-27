@@ -9,11 +9,15 @@ body {
 /* Alinhar os elementos lado a lado e manter o fundo com o gradiente */
 .primeiro {
   justify-content: space-between; /* Dá espaço entre os elementos */
-  background-color: #073980;
+  background-image: url('/paisagem.webp');
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-size: cover; /* Ajusta a imagem para cobrir o elemento */
+  background-position: center; /* Centraliza a imagem no elemento */
   width: 100%;
   height: 100vh; /* Ajuste conforme necessário */
-text-align: center
+  text-align: center;
 }
+
 
 
 
