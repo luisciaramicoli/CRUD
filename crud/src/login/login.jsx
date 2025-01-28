@@ -16,7 +16,7 @@ const Login = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.email || !formData.password) {
@@ -31,16 +31,32 @@ const Login = () => {
 
     setLoading(true);
 
-    // Simulação de autenticação
-    setTimeout(() => {
-      if (formData.email === "user@example.com" && formData.password === "123456") {
-        setError("");
+    try {
+      const response = await fetch("http://localhost:3333/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          senha: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.sucesso) {
+        // Se o login for bem-sucedido, redireciona para a página inicial
+        setError(""); // Limpa o erro
         navigate("/home");
       } else {
-        setError("Credenciais inválidas.");
+        setError(data.mensagem || "Erro ao fazer login. Tente novamente.");
       }
+    } catch (err) {
+      setError("Erro ao fazer login. Tente novamente.");
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -48,7 +64,6 @@ const Login = () => {
       <div className={styles.formContainer}>
         <div className={styles.info}>
           <div className={styles.Titulo2}>Seguro</div>
-
           <div className={styles.divIcone}>
             <img src="/icone.png" alt="" className={styles.icone} />
           </div>
@@ -89,7 +104,7 @@ const Login = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 style={{ cursor: "pointer", marginLeft: "8px" }}
               >
-                {showPassword ? <FaLock  className={styles.icon}/> : <FaEye  className={styles.icon}/>}
+                {showPassword ? <FaEyeSlash className={styles.icon} /> : <FaEye className={styles.icon} />}
               </span>
               <label htmlFor="password" className={styles.label}>
                 Senha:
@@ -103,13 +118,8 @@ const Login = () => {
                 onChange={handleChange}
                 required
               />
-              {/* Ícone clicável para alternar visibilidade da senha */}
-             
             </div>
           </div>
-
-          
-         
 
           {error && <div className={styles.error}>{error}</div>}
 

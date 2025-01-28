@@ -132,14 +132,14 @@ font-size: 1.4rem;
   /* Estilo para o estado de autofill */
   .inputWithIcon input:-webkit-autofill {
     -webkit-text-fill-color: #ffffff; /* Define a cor do texto */
-    -webkit-box-shadow: 0 0 0px 1000px #0F172A inset; /* Alinha o fundo ao estilo do campo */
-    box-shadow: 0 0 0px 1000px #0F172A inset;
+    -webkit-box-shadow: 0 0 0px 1000px #0530ad inset; /* Alinha o fundo ao estilo do campo */
+    box-shadow: 0 0 0px 1000px #0530ad inset;
     transition: background-color 5000s ease-in-out 0s; /* Para evitar mudanças indesejadas */
   }
   
   /* Para navegadores sem suporte ao prefixo -webkit */
   .inputWithIcon input:autofill {
-    background-color: #0F172A; /* Cor de fundo */
+    background-color: #0530ad; /* Cor de fundo */
     color: #ffffff; /* Cor do texto */
   }
   
@@ -173,9 +173,9 @@ font-size: 1.4rem;
   
   /* Mensagem de erro */
   .error {
-    color: rgb(175, 0, 0);
+    color: rgb(0, 0, 0);
     font-size: 1.2rem;
-    margin-left: 50%;
+    text-align: center;
   }
   
   /* Botão */
