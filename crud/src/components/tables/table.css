@@ -24,6 +24,7 @@
   .pagination button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+    color: black;
   }
   
   .pagination button.active {
@@ -34,6 +35,7 @@
   /* Estilo de quando o botão está desabilitado */
   .pagination button:disabled:hover {
     background-color: #ccc;
+    color: black;
   }
   
   .pagination button.active:hover {

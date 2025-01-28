@@ -7,19 +7,23 @@ function TourismTable() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
-  const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(""); // Para mostrar erros
 
+  // Carregar os pontos turísticos
   useEffect(() => {
     const fetchPontosTuristicos = async () => {
       try {
-        const response = await fetch("http://localhost:3333/pontosTuristicos");
+        const response = await fetch("http://localhost:3333/listar");
         const data = await response.json();
         if (data.sucesso) {
           const sortedPontos = data.dados.sort((a, b) => new Date(b.data_inclusao) - new Date(a.data_inclusao));
-          setPontos(sortedPontos);
+
+          setPontos(sortedPontos); // Apenas define os pontos, sem precisar associar o estado
+        } else {
+          setError("Erro ao carregar pontos turísticos.");
         }
       } catch (err) {
-        console.error("Erro ao carregar pontos turísticos:", err.message);
+        setError("Erro ao carregar pontos turísticos: " + err.message);
       } finally {
         setLoading(false);
       }
@@ -38,13 +42,11 @@ function TourismTable() {
     setCurrentPage(pageNumber);
   };
 
-  const addPonto = (ponto) => {
-    setPontos((prevPontos) => [ponto, ...prevPontos]);
-  };
-
   return (
     <div>
       <h2>Pontos Turísticos</h2>
+
+      {error && <div className="alert alert-danger">{error}</div>} {/* Exibe erro */}
 
       {loading ? (
         <div className="d-flex justify-content-center">
@@ -68,7 +70,7 @@ function TourismTable() {
                   <td>{ponto.nome}</td>
                   <td>{ponto.descricao}</td>
                   <td>{ponto.cidade}</td>
-                  <td>{ponto.estado_id}</td>
+                  <td>{ponto.estado_nome}</td> {/* Exibe o nome do estado vindo da API */}
                   <td>{new Date(ponto.data_inclusao).toLocaleString()}</td>
                 </tr>
               ))}
@@ -77,13 +79,7 @@ function TourismTable() {
 
           <div className="pagination">
             {/* Botões de página */}
-            <Button
-              variant="secondary"
-              onClick={() => handlePageChange(1)}
-              disabled={currentPage === 1}
-            >
-              Primeira
-            </Button>
+  
             <Button
               variant="secondary"
               onClick={() => handlePageChange(currentPage - 1)}
@@ -107,13 +103,6 @@ function TourismTable() {
               disabled={currentPage === totalPages}
             >
               Próxima
-            </Button>
-            <Button
-              variant="secondary"
-              onClick={() => handlePageChange(totalPages)}
-              disabled={currentPage === totalPages}
-            >
-              Última
             </Button>
           </div>
         </>
