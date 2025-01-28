@@ -69,3 +69,64 @@
     background-color: #f1f1f1;
     /* Cor do trilho da barra */
 }
+.botoes{
+    text-align: center;
+}
+/* home.css */
+/* home.css */
+
+/* Estilização para o carrossel */
+.carousel {
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Largura do carrossel */
+    margin-left: auto; /* Margem automática à esquerda */
+    margin-right: auto; /* Margem automática à direita */
+    text-align: center;
+}
+
+/* Estilo para as imagens do carrossel */
+/* home.css */
+
+/* Estilização para as imagens do carrossel */
+.carousel img {
+    border-radius: 8px;
+    max-height: 500px; /* Limita a altura das imagens */
+    width: 100%; /* Faz com que as imagens ocupem toda a largura do carrossel */
+    display: block; /* Remove espaços indesejados abaixo das imagens */
+    margin: 0 auto; /* Centraliza as imagens */
+}
+
+
+/* Ajuste das legendas do carrossel */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-caption h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 16px;
+    margin-bottom: 10%;
+}
+
+/* Estilo para navegação (setas) */
+.carousel-control-prev, .carousel-control-next {
+    filter: invert(100%); /* Deixa as setas brancas */
+}
+
+/* Ajuste para o layout da página */
+.tabela {
+    margin-top: 30px;
+}
+
+.botoes {
+    margin-top: 20px;
+}

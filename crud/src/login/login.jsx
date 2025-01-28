@@ -97,6 +97,8 @@ const Login = () => {
             </div>
           </div>
 
+         
+
           <div className={styles.input}>
             <div className={styles.inputWithIcon}>
               <span
@@ -122,9 +124,18 @@ const Login = () => {
           </div>
 
           {error && <div className={styles.error}>{error}</div>}
-
+ {/* Link para cadastro */}
+ <div className={styles.linkCadastro}>
+            <Link to="/cadastro" className={styles.link}>
+              Cadastrar-se
+            </Link>
+          </div>
           <div className={styles.input}>
-            {!loading ? <button type="submit">Entrar</button> : <Spin />}
+            {!loading ? (
+              <button type="submit">Entrar</button>
+            ) : (
+              <Spin />
+            )}
           </div>
         </form>
       </div>

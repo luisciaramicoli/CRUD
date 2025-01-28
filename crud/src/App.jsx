@@ -3,6 +3,7 @@ import LandingPage from "./lang/home";
 import Login from "./login/login";
 import "./App.css";
 import Home from "./home/home";
+import Cadastro from "./cadastro/cadastro";
 const AppContent = () => {
 
 
@@ -12,6 +13,7 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </div>
