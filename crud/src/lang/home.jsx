@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "./home.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importação do CSS da AOS
+import { FaUmbrellaBeach, FaPlane, FaMapMarkedAlt, FaHotel } from "react-icons/fa";
 
 import { FaRobot, FaLaptopCode, FaChartLine, FaBuilding } from "react-icons/fa";
 
@@ -55,52 +56,54 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* Benefícios */}
-      <div className={styles.beneficio} data-aos="fade-up">
-        <h2 className={styles.titulo2}>Benefícios</h2>
+      <section className={styles.destinos} id="destinos" data-aos="fade-up">
+        <h2 className={styles.titulo2}>Destinos Populares</h2>
         <div className={styles.cardsContainer}>
-          <div className={`${styles.card} ${styles.cardBackground}`} data-aos="zoom-in">
-            <FaRobot className={styles.cardIcon} />
-            <h3 className={styles.cardTitle}>Automação de dados</h3>
+          <div className={styles.card} data-aos="zoom-in">
+            <FaUmbrellaBeach className={styles.cardIcon} />
+            <h3 className={styles.cardTitle}>Praias Paradisíacas</h3>
             <p className={styles.cardDescription}>
-              Automatize processos repetitivos, economize tempo e minimize erros. Nossa solução de automação de dados permite que sua empresa se concentre no que realmente importa.
+              Aproveite as praias mais deslumbrantes do mundo, com águas cristalinas e paisagens inesquecíveis.
             </p>
           </div>
 
-          <div className={`${styles.card} ${styles.cardBackground}`} data-aos="zoom-in">
-            <FaLaptopCode className={styles.cardIcon} />
-            <h3 className={styles.cardTitle}>Tecnologia</h3>
+          <div className={styles.card} data-aos="zoom-in">
+            <FaPlane className={styles.cardIcon} />
+            <h3 className={styles.cardTitle}>Cidades Históricas</h3>
             <p className={styles.cardDescription}>
-              Nossa plataforma oferece recursos tecnológicos avançados para melhorar a gestão da sua empresa.
+              Descubra a riqueza cultural e histórica de destinos que marcaram épocas.
             </p>
           </div>
 
-          <div className={`${styles.card} ${styles.cardBackground}`} data-aos="zoom-in">
-            <FaChartLine className={styles.cardIcon} />
-            <h3 className={styles.cardTitle}>Visualização</h3>
+          <div className={styles.card} data-aos="zoom-in">
+            <FaMapMarkedAlt className={styles.cardIcon} />
+            <h3 className={styles.cardTitle}>Aventura e Natureza</h3>
             <p className={styles.cardDescription}>
-              Tenha uma visão clara e detalhada dos dados da sua empresa, facilitando decisões rápidas e assertivas para o crescimento do seu negócio.
+              Explore trilhas, montanhas e florestas, conectando-se à natureza de forma única.
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Avaliações */}
-      <div className={styles.avaliacoes} data-aos="fade-up">
-        <h2 className={styles.titulo3}>O que dizem nossos clientes</h2>
-        <div className={styles.cardsContainerEmpresa}>
-          <div className={`${styles.cardEmpresa} ${styles.cardBackground}`} data-aos="flip-left">
-            <div className={styles.cardHeader}>
-              <FaBuilding className={styles.cardIconEmpresa} />
-              <h3 className={styles.cardTitleEmpresa}>ETEC</h3>
-            </div>
-            <p className={styles.cardDescriptionEmpresa}>
-              "Nossa experiência com a plataforma tem sido incrível! A interface é intuitiva, e os recursos tecnológicos avançados realmente transformaram nossa gestão. Agora, conseguimos otimizar processos de maneira eficiente e sem complicações. Recomendamos a todos que buscam inovação e praticidade para suas empresas!"
+     {/* Avaliações */}
+     <section className={styles.avaliacoes} data-aos="fade-up">
+        <h2 className={styles.sectionTitle}>O que Nossos Viajantes Dizem</h2>
+        <div className={styles.cardsContainer}>
+          <div className={styles.card} data-aos="flip-left">
+            <p className={styles.cardDescription}>
+              "Minha experiência foi simplesmente maravilhosa! Cada detalhe da viagem foi bem planejado e as paisagens eram de tirar o fôlego. Recomendo muito!"
             </p>
+            <h4 className={styles.cardAuthor}>- Marina S.</h4>
+          </div>
+
+          <div className={styles.card} data-aos="flip-left">
+            <p className={styles.cardDescription}>
+              "A equipe foi muito atenciosa e as opções de destino eram incríveis. Já estou planejando minha próxima viagem com eles!"
+            </p>
+            <h4 className={styles.cardAuthor}>- Carlos A.</h4>
           </div>
         </div>
-      </div>
-
+      </section>
       {/* Funcionamento */}
       <div className={styles.funcionamento} data-aos="fade-up">
         <h2 className={styles.titulo3}>Como funciona</h2>

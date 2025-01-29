@@ -5,7 +5,7 @@ import styles from "./cadastro.module.css"; // Importando o CSS modular
 import { Spin } from "antd";
 
 const Cadastro = () => {
-  const [formData, setFormData] = useState({ nome: "", email: "", password: "", confirmPassword: "", dataNascimento: "" });
+  const [formData, setFormData] = useState({ nome: "", email: "", password: "", confirmPassword: "", data_nascimento: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false); // Estado para alternar a visibilidade da senha
@@ -19,27 +19,28 @@ const Cadastro = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Verificação dos campos obrigatórios
-    if (!formData.nome || !formData.email || !formData.password || !formData.confirmPassword || !formData.dataNascimento) {
+    if (!formData.nome || !formData.email || !formData.password || !formData.confirmPassword || !formData.data_nascimento) {
       setError("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
-
+  
     // Validação de senha
     if (formData.password.length < 6) {
       setError("A senha deve ter pelo menos 6 caracteres.");
       return;
     }
-
+  
     // Validação de confirmação de senha
     if (formData.password !== formData.confirmPassword) {
       setError("As senhas não coincidem.");
       return;
     }
-
+  
     setLoading(true);
-
+    setError("");
+  
     try {
       const response = await fetch("http://localhost:3333/cadastrarusuario", {
         method: "POST",
@@ -47,28 +48,40 @@ const Cadastro = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          nome: formData.nome,
-          email: formData.email,
+          nome: formData.nome.trim(),
+          email: formData.email.trim(),
           senha: formData.password,
-          dataNascimento: formData.dataNascimento,
+          data_nascimento: formData.data_nascimento,
         }),
       });
-
+  
+      if (!response.ok) {
+        throw new Error("Erro na resposta do servidor.");
+      }
+  
       const data = await response.json();
-
-      if (response.ok && data.sucesso) {
-        // Se o cadastro for bem-sucedido, redireciona para o login
-        setError(""); // Limpa o erro
+  
+      if (data.sucesso) {
+        // Cadastro bem-sucedido
         navigate("/login");
       } else {
         setError(data.mensagem || "Erro ao realizar o cadastro. Tente novamente.");
       }
     } catch (err) {
+      console.error("Erro no cadastro:", err);
       setError("Erro ao realizar o cadastro. Tente novamente.");
     } finally {
       setLoading(false);
     }
+    console.log("Enviando dados para a API:", {
+      nome: formData.nome.trim(),
+      email: formData.email.trim(),
+      senha: formData.password,
+      data_nascimento: formData.data_nascimento,
+    });
+    
   };
+  
 
   return (
     <div className={styles.tudo}>
@@ -141,6 +154,8 @@ const Cadastro = () => {
               </div>
             </div>
 
+
+
             <div className={styles.input}>
               <div className={styles.inputWithIcon}>
                 <span
@@ -166,18 +181,19 @@ const Cadastro = () => {
             </div>
 
             <div className={styles.input}>
-              <label htmlFor="dataNascimento" className={styles.label}>
+              <label htmlFor="data_nascimento" className={styles.label}>
                 Data de Nascimento:
               </label>
               <input
-                className={styles.inputsenha}
-                type="date"
-                id="dataNascimento"
-                name="dataNascimento"
-                value={formData.dataNascimento}
-                onChange={handleChange}
-                required
-              />
+  className={styles.inputdata}
+  type="date"
+  id="data_nascimento"
+  name="data_nascimento"
+  value={formData.data_nascimento}
+  onChange={handleChange}
+  required
+/>
+
             </div>
 
            
@@ -188,7 +204,7 @@ const Cadastro = () => {
                 Já tem uma conta? Faça login
               </Link>
             </div>
-            {error && <div className={styles.error}>{error}</div>}
+ {error && <div className={styles.error}>{error}</div>}
             <div className={styles.input}>
               {!loading ? (
                 <button type="submit">Cadastrar</button>

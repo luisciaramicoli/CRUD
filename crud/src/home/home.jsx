@@ -6,37 +6,6 @@ import './home.css';
 import Carousel from 'react-bootstrap/Carousel';
 
 // Componente para o carrossel de imagens
-function ImageCarousel() {
-    return (
-        <Carousel>
-    <Carousel.Item>
-        <img
-            className="imagem"
-            src="./1.jpg"
-            alt="Primeira imagem"
-        />
-        
-    </Carousel.Item>
-    <Carousel.Item>
-        <img
-            className="imagem"
-            src="./2.jpg"
-            alt="Segunda imagem"
-        />
-       
-    </Carousel.Item>
-    <Carousel.Item>
-        <img
-            className="imagem"
-            src="./3.jpg"
-            alt="Terceira imagem"
-        />
-       
-    </Carousel.Item>
-</Carousel>
-
-    );
-}
 
 function Home() {
     // Estado para controlar a visibilidade do modal
@@ -58,8 +27,7 @@ function Home() {
         <div>
             <NavBar />
             {/* Carrossel de imagens */}
-            <ImageCarousel />
-            
+           
             <div className="tabela">
                 <TourismTable />
             </div>

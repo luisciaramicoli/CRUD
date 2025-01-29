@@ -106,9 +106,7 @@ function TourismTable() {
   const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
-      <h2>Pontos Turísticos</h2>
-
+    <div id="tabela">
       {error && <div className="alert alert-danger">{error}</div>}
 
       {loading ? (

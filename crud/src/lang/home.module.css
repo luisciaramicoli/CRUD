@@ -81,6 +81,7 @@ padding-top: 15%;
   gap: 20px; /* Adiciona um espaço entre os cards */
   flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se não couberem */
   padding: 20px; /* Padding ao redor dos cards */
+  padding-bottom: 5%;
 }
 
 .beneficio {
@@ -145,7 +146,8 @@ padding-top: 15%;
   font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
-  margin-bottom: 6%;
+  margin-bottom: 4%;
+  margin-top: 2%;
 }
 
 .titulo3 {

@@ -21,14 +21,18 @@
     background:#0530ad;
     animation: fadeIn 1s ease-out; /* Animação de fadeIn */
 }
-  .info {
-    gap: 1.5rem;
-    width: 60vh;
-    max-width: 100%; /* Ajusta em telas menores */
-   background-color:  azure;
-   color: black;
-   height: 70vh;
+.info {
+  gap: 1.5rem;
+  width: 60vh;
+  max-width: 100%; /* Ajusta em telas menores */
+  background-image: url("./fundo.jpg");
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  background-size: cover; /* Faz a imagem ocupar todo o fundo */
+  background-position: center; /* Centraliza a imagem */
+  color: black;
+  height: 70vh;
 }
+
 .form {
     display: flex;
     flex-direction: column;
@@ -81,14 +85,14 @@
   }
   .Titulo2 {
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 2rem;
-    margin-top: 7%;
+    margin-top: 15%;
     font-weight: bold;
   }
   .subTitulo {
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 1.5rem;
     margin-top: 1.5rem;
   }

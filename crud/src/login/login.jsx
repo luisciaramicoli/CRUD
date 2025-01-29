@@ -122,14 +122,14 @@ const Login = () => {
               />
             </div>
           </div>
-
-          {error && <div className={styles.error}>{error}</div>}
  {/* Link para cadastro */}
  <div className={styles.linkCadastro}>
             <Link to="/cadastro" className={styles.link}>
               Cadastrar-se
             </Link>
           </div>
+          {error && <div className={styles.error}>{error}</div>}
+
           <div className={styles.input}>
             {!loading ? (
               <button type="submit">Entrar</button>
