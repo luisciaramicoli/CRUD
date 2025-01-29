@@ -12,6 +12,7 @@ function TourismTable() {
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedPonto, setSelectedPonto] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Carregar os pontos turísticos
   useEffect(() => {
@@ -35,73 +36,25 @@ function TourismTable() {
     fetchPontosTuristicos();
   }, []);
 
-  // Função para excluir ponto turístico
-  const deletePonto = async (ponto_id) => {
-    if (!ponto_id) {
-      setError("ID do ponto turístico inválido.");
-      return;
-    }
-
-    try {
-      const response = await fetch(`http://localhost:3333/pontosTuristicos/${ponto_id}`, { method: "DELETE" });
-      const data = await response.json();
-      if (data.sucesso) {
-        setPontos(pontos.filter((ponto) => ponto.ponto_id !== ponto_id));
-      } else {
-        setError("Erro ao excluir ponto turístico.");
-      }
-    } catch (err) {
-      setError(`Erro ao excluir ponto turístico: ${err.message}`);
-    }
-  };
-
-  // Função para abrir o modal de edição
-  const handleEdit = (ponto) => {
-    setSelectedPonto(ponto);
-    setShowModal(true);
-  };
-
-  // Função para fechar o modal
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setSelectedPonto(null);
-  };
-
-  // Função para salvar as edições
-  const handleSaveChanges = async () => {
-    if (!selectedPonto) return;
-
-    try {
-      const response = await fetch(`http://localhost:3333/pontosTuristicos/${selectedPonto.ponto_id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          nome: selectedPonto.nome,
-          descricao: selectedPonto.descricao,
-          cidade: selectedPonto.cidade,
-          estado_id: selectedPonto.estado_id,
-          data_inclusao: selectedPonto.data_inclusao,
-        }),
-      });
-
-      const data = await response.json();
-      if (data.sucesso) {
-        setPontos(pontos.map((ponto) => (ponto.ponto_id === selectedPonto.ponto_id ? selectedPonto : ponto)));
-        setError("");
-        handleCloseModal();
-      } else {
-        setError("Erro ao salvar alterações.");
-      }
-    } catch (err) {
-      setError(`Erro ao salvar alterações: ${err.message}`);
-    }
+  // Função de filtro
+  const filterPontos = (pontos) => {
+    return pontos.filter((ponto) => {
+      const search = searchTerm.toLowerCase();
+      return (
+        ponto.nome.toLowerCase().includes(search) ||
+        ponto.descricao.toLowerCase().includes(search) ||
+        ponto.cidade.toLowerCase().includes(search) ||
+        ponto.estado_nome.toLowerCase().includes(search)
+      );
+    });
   };
 
   // Paginação
+  const filteredPontos = filterPontos(pontos);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = pontos.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(pontos.length / itemsPerPage);
+  const currentItems = filteredPontos.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredPontos.length / itemsPerPage);
 
   const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -115,6 +68,17 @@ function TourismTable() {
         </div>
       ) : (
         <>
+          {/* Campo de busca */}
+          <Form.Group controlId="searchTerm">
+          
+            <Form.Control
+              type="text"
+              placeholder="Digite o nome, descrição ou localização"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </Form.Group>
+
           <Table striped bordered hover>
             <thead>
               <tr>
