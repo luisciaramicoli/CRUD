@@ -26,6 +26,27 @@ const Cadastro = () => {
       return;
     }
   
+    // Validação da data de nascimento
+    const hoje = new Date();
+    const dataNascimento = new Date(formData.data_nascimento);
+    const idade = hoje.getFullYear() - dataNascimento.getFullYear();
+    const mes = hoje.getMonth() - dataNascimento.getMonth();
+    const dia = hoje.getDate() - dataNascimento.getDate();
+  
+    if (dataNascimento > hoje) {
+      setError("A data de nascimento não pode estar no futuro.");
+      return;
+    }
+    if (idade > 110) {
+      setError("A idade não pode ser superior a 110 anos. Verifique a data de nascimento informada.");
+      return;
+    }
+    
+    if (idade < 18 || (idade === 18 && mes < 0) || (idade === 18 && mes === 0 && dia < 0)) {
+      setError("Você deve ter pelo menos 18 anos para se cadastrar.");
+      return;
+    }
+  
     // Validação de senha
     if (formData.password.length < 6) {
       setError("A senha deve ter pelo menos 6 caracteres.");
@@ -73,14 +94,8 @@ const Cadastro = () => {
     } finally {
       setLoading(false);
     }
-    console.log("Enviando dados para a API:", {
-      nome: formData.nome.trim(),
-      email: formData.email.trim(),
-      senha: formData.password,
-      data_nascimento: formData.data_nascimento,
-    });
-    
   };
+  
   
 
   return (

@@ -109,14 +109,14 @@ function LandingPage() {
         <h2 className={styles.titulo3}>Como funciona</h2>
         <div className={styles.imgContainer}>
           <img
-            src="https://res.cloudinary.com/dkmn1nbet/image/upload/v1734204356/fpyfuftmm2ktjjiixn2x.png"
+            src="./tela.png"
             alt="Imagem exemplo"
             className={styles.img}
           />
           <div className={styles.text}>
             <h3 className={styles.tituloText}>Interface intuitiva e poderosa</h3>
             <p>
-              Transforme a maneira como você gerencia seu negócio com tecnologia que simplifica processos e potencializa resultados.
+              Transforme a maneira como você visualiza suas viajens.
             </p>
           </div>
         </div>
@@ -126,7 +126,7 @@ function LandingPage() {
       <footer className={`${styles.rodape} ${styles.rodapeBackground}`} id="contato" data-aos="fade-up">
         <h3 className={styles.contato}>Entre em contato</h3>
         <div className={styles.infoContato}>
-          <p>Email: tccadms223@gmail.com.br</p>
+          <p>Email: turismo@gmail.com.br</p>
           <p>Telefone: (14) 997547353</p>
         </div>
         <div className={styles.redesSociais}>
@@ -144,7 +144,7 @@ function LandingPage() {
           </a>
         </div>
         <div className={styles.direitosAutorais}>
-          <p>&copy; 2024 SAT Tecnologia. Todos os direitos reservados.</p>
+          <p>&copy; 2025 Turismo Tecnologia. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>

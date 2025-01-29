@@ -63,13 +63,13 @@ const Login = () => {
     <div className={styles.tudo}>
       <div className={styles.formContainer}>
         <div className={styles.info}>
-          <div className={styles.Titulo2}>Seguro</div>
-          <div className={styles.divIcone}>
-            <img src="/icone.png" alt="" className={styles.icone} />
-          </div>
-          <div className={styles.subTitulo}>
-            <p>Bem-vindo ao Seguro, o seu gerenciador de seguros.</p>
-          </div>
+        <div className={styles.Titulo2}>Turismo</div>
+<div className={styles.subTitulo}>
+  <p>
+    Bem-vindo ao <strong>Turismo</strong>, o seu portal para explorar o mundo!  
+  </p>
+</div>
+
         </div>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.seta}>

@@ -4,6 +4,7 @@ import Login from "./login/login";
 import "./App.css";
 import Home from "./home/home";
 import Cadastro from "./cadastro/cadastro";
+import MapaTela from "./mapaTela/home";
 const AppContent = () => {
 
 
@@ -15,6 +16,7 @@ const AppContent = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/mapa" element={<MapaTela />} />
         </Routes>
       </div>
     </div>

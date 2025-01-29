@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import NavBar from "../components/nav/home";
-import TourismTable from "../components/tables/tables";
-import CadastroPonto from "../components/cadastro/cadastro";
-import styles from './home.module.css';
+import Mapa from "../components/mapa/mapa";
 
 // Componente para o carrossel de imagens
-function Home() {
+
+function MapaTela() {
     // Estado para controlar a visibilidade do modal
     const [showModal, setShowModal] = useState(false);
 
@@ -24,22 +23,10 @@ function Home() {
     return (
         <div>
             <NavBar />
-            <div className={styles.Titulo}>Turismo</div>
-            <div className={styles.subTitulo}> O site perfeito para você</div>
            
-            <div className={styles.tabela}>
-                <TourismTable />
-            </div>
-            
-            <div className={styles.botoes}>
-                <CadastroPonto
-                    showModal={showModal}
-                    handleCloseModal={handleCloseModal}
-                    addPonto={addPonto}
-                />
-            </div>
+            <Mapa/>
         </div>
     );
 }
 
-export default Home;
+export default MapaTela;

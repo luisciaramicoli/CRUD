@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal, Form, Spinner } from "react-bootstrap";
 
-function CadastroButton() {
+function CadastroPonto() {
   const [showModal, setShowModal] = useState(false);
   const [newPonto, setNewPonto] = useState({
     nome: "",
@@ -9,18 +9,18 @@ function CadastroButton() {
     localizacao: "",
     cidade: "",
     estado_id: "",
-    logradouro: "",  // Novo campo logradouro
-    cep: "", // Novo campo CEP
+    logradouro: "",
+    cep: "",
     bairro: "",
   });
   const [estados, setEstados] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
-  const [error, setError] = useState(""); // Para exibir erros
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchEstados = async () => {
       try {
-        const response = await fetch("http://localhost:3333/estados");  // Endpoint para buscar estados
+        const response = await fetch("http://localhost:3333/estados");
         const data = await response.json();
         if (data.sucesso) {
           setEstados(data.dados);
@@ -35,23 +35,57 @@ function CadastroButton() {
     fetchEstados();
   }, []);
 
+  // Função para buscar os dados do endereço pelo CEP
+  const buscarEnderecoPorCEP = async (cep) => {
+    if (cep.length === 8) {
+      try {
+        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        const data = await response.json();
+        if (!data.erro) {
+          setNewPonto((prevState) => ({
+            ...prevState,
+            logradouro: data.logradouro,
+            bairro: data.bairro,
+            cidade: data.localidade,
+            estado_id: estados.find((estado) => estado.sigla === data.uf)?.estado_id || "", // Achar o estado pelo sigla
+          }));
+        } else {
+          setError("CEP inválido");
+        }
+      } catch (err) {
+        setError("Erro ao buscar o CEP: " + err.message);
+      }
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewPonto({ ...newPonto, [name]: value });
+
+    if (name === "cep") {
+      buscarEnderecoPorCEP(value); // Chama a função de busca quando o CEP mudar
+    }
   };
 
   const handleSave = async () => {
-    // Validação de campos obrigatórios
-    if (!newPonto.nome || !newPonto.descricao || !newPonto.localizacao || !newPonto.cidade || !newPonto.estado_id || !newPonto.logradouro || !newPonto.cep) {
+    if (
+      !newPonto.nome ||
+      !newPonto.descricao ||
+      !newPonto.localizacao ||
+      !newPonto.cidade ||
+      !newPonto.estado_id ||
+      !newPonto.logradouro ||
+      !newPonto.cep
+    ) {
       setError("Por favor, preencha todos os campos.");
       return;
     }
 
     setIsSaving(true);
-    setError(""); // Limpa o erro anterior
+    setError(""); 
 
     try {
-      const response = await fetch("http://localhost:3333/cadastrarPonto", {  // Endpoint para cadastrar o ponto turístico
+      const response = await fetch("http://localhost:3333/cadastrarPonto", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +118,7 @@ function CadastroButton() {
         Cadastrar Novo Ponto Turístico
       </Button>
 
-      {error && <div className="alert alert-danger">{error}</div>} {/* Exibe erro */}
+      {error && <div className="alert alert-danger">{error}</div>}
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
@@ -127,6 +161,18 @@ function CadastroButton() {
               />
               <Form.Control.Feedback type="invalid">Este campo é obrigatório.</Form.Control.Feedback>
             </Form.Group>
+            
+            <Form.Group controlId="formCEP">
+              <Form.Label>CEP</Form.Label>
+              <Form.Control
+                type="text"
+                name="cep"
+                value={newPonto.cep}
+                onChange={handleInputChange}
+                isInvalid={!newPonto.cep && error}
+              />
+              <Form.Control.Feedback type="invalid">Este campo é obrigatório.</Form.Control.Feedback>
+            </Form.Group>
 
             <Form.Group controlId="formCidade">
               <Form.Label>Cidade</Form.Label>
@@ -160,18 +206,6 @@ function CadastroButton() {
                 value={newPonto.logradouro}
                 onChange={handleInputChange}
                 isInvalid={!newPonto.logradouro && error}
-              />
-              <Form.Control.Feedback type="invalid">Este campo é obrigatório.</Form.Control.Feedback>
-            </Form.Group>
-
-            <Form.Group controlId="formCEP">
-              <Form.Label>CEP</Form.Label>
-              <Form.Control
-                type="text"
-                name="cep"
-                value={newPonto.cep}
-                onChange={handleInputChange}
-                isInvalid={!newPonto.cep && error}
               />
               <Form.Control.Feedback type="invalid">Este campo é obrigatório.</Form.Control.Feedback>
             </Form.Group>
@@ -210,4 +244,4 @@ function CadastroButton() {
   );
 }
 
-export default CadastroButton;
+export default CadastroPonto;

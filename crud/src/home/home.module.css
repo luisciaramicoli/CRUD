@@ -15,9 +15,18 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Sombra para destacar a tabela */
 }
-
+.Titulo{
+    text-align: center;
+    margin-top: 2%;
+    font-size: 1.8rem;
+}
+.subTitulo{
+    text-align: center;
+    margin-top: 2%;
+    font-size: 1.3rem;
+}
 .tabela table {
-    width: 100%;
+    width: 99%;
     border-collapse: collapse;
     /* Remove espaços entre células */
     text-align: left;

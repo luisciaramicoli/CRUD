@@ -20,15 +20,22 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     background:#0530ad;
     animation: fadeIn 1s ease-out; /* Animação de fadeIn */
+    border-radius: 10%;
 }
-  .info {
-    gap: 1.5rem;
-    width: 70vh;
-    max-width: 100%; /* Ajusta em telas menores */
-   background-color:  azure;
-   color: black;
-   height: 80vh;
+.info {
+  display: flex; /* Adicionado caso precise alinhar itens */
+  flex-direction: column; /* Para itens em coluna */
+  gap: 1.5rem;
+  width: 70vh;
+  max-width: 100%; /* Ajusta em telas menores */
+  background:#0530ad;
+  color: #ffffff; /* Texto branco para melhor contraste */
+  height: auto;
+  padding: 2%; /* Melhor espaçamento */
+  border-radius: 20px; /* Bordas mais suaves */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
 }
+
 
 .divIcone{
     text-align: center;
@@ -40,22 +47,12 @@
   /* Cabeçalho */
 
   
-  /* Logo */
-  .logoInicio {
-    color: rgb(0, 0, 0);
-    width: 3%;
-    margin-left: 1%;
-  }
-  .logo {
-    width: 100%;
-  }
-  
   .text {
-    color: #000000;
+    color: #ffffff;
   }
   .link {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 0.9rem;
     margin-left: 15%;
   }
@@ -70,24 +67,12 @@
   /* Título */
   .Titulo {
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 2rem;
     margin-top: 5%;
     margin-bottom: 5%;
   }
-  .Titulo2 {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 2rem;
-    margin-top: 7%;
-    font-weight: bold;
-  }
-  .subTitulo {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-  }
+
   .senhaEsquecida {
     color: red;
     font-size: 13px;
@@ -99,7 +84,7 @@
   }
   
   .label {
-    color: #000000;
+    color: #ffffff;
   }
   
   /* Campos de entrada */
@@ -111,7 +96,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #000000;
+    color: #ffffff;
   }
   
   .inputWithIcon {
@@ -119,24 +104,24 @@
   }
   /* Estilo para o estado de autofill */
   .inputWithIcon input:-webkit-autofill {
-    -webkit-text-fill-color: #000000; /* Define a cor do texto */
-    -webkit-box-shadow: 0 0 0px 1000px #2e2c2c inset; /* Alinha o fundo ao estilo do campo */
-    box-shadow: 0 0 0px 1000px #ffffff inset;
+    -webkit-text-fill-color: #ffffff; /* Define a cor do texto */
+    -webkit-box-shadow: 0 0 0px 1000px #000000 inset; /* Alinha o fundo ao estilo do campo */
+    box-shadow: 0 0 0px 1000px #0530ad inset;
     transition: background-color 5000s ease-in-out 0s; /* Para evitar mudanças indesejadas */
   }
   
   /* Para navegadores sem suporte ao prefixo -webkit */
   .inputWithIcon input:autofill {
     background-color: #ffffff; /* Cor de fundo */
-    color: #000000; /* Cor do texto */
+    color: #ffffff; /* Cor do texto */
   }
   
   .inputWithIcon .icon {
     position: absolute;
-    top: 50%;
-    right: 10px;
+    top: 60%;
+    right: 0px;
     transform: translateY(-50%);
-    color: #000000;
+    color: #ffffff;
     font-size: 1.2rem;
   }
   
@@ -147,7 +132,7 @@
     border: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5);
     font-size: 1rem;
-    color: #000000;
+    color: #ffffff;
     border-radius: 10px;
   }
   
@@ -168,15 +153,15 @@
   /* Botão */
   .input button {
     width: 100%;
-    max-width: 200px; /* Limita largura máxima */
+    max-width: 250px; /* Limita largura máxima */
     height: 45px;
     border: none;
     border-radius: 4px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s ease;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-align: center;
     margin-top: 5%;
   }
@@ -188,16 +173,17 @@
     width: 50%;
     padding: 10px;
     font-size: 14px;
-    color: #333;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
     border-radius: 8px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 1%;
+    margin-top: 1%;
   }
   
   .inputdata:focus {
-    border-color: #4caf50;
+    border-color: #000000;
     box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
     outline: none;
   }
