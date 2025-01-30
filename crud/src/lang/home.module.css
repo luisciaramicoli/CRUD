@@ -28,11 +28,12 @@ body {
 
 /* Estilos do título */
 .Titulo {
-  color:  #ffffff; /* Torna o texto transparente para exibir o gradiente */
+  color: #ffffff; /* Cor do texto */
   font-size: 2.5rem; /* Tamanho da fonte */
   font-weight: bold; /* Deixa o texto em negrito */
-text-align: center;
-padding-top: 15%;
+  text-align: center;
+  padding-top: 15%;
+  text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
 }
 
 
@@ -41,6 +42,7 @@ padding-top: 15%;
   font-size: 1rem; /* Tamanho da fonte */
   margin-top: 2%;
   font-weight: none;
+  text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
 }
 
 .logo {
