@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { FaLock, FaEnvelope, FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEnvelope, FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
 import styles from "./login.module.css"; // Importando o CSS modular
 import { Spin } from "antd";
 
@@ -63,12 +63,12 @@ const Login = () => {
     <div className={styles.tudo}>
       <div className={styles.formContainer}>
         <div className={styles.info}>
-        <div className={styles.Titulo2}>Turismo</div>
-<div className={styles.subTitulo}>
-  <p>
-    Bem-vindo ao <strong>Turismo</strong>, o seu portal para explorar o mundo!  
-  </p>
-</div>
+        <div className={styles.Titulo2}><img src="/Turismo (1).png" className={styles.logo} alt="" /></div>
+        <div className={styles.subTitulo}>
+          <p>
+            Bem-vindo ao <strong>Turismo</strong>, o seu portal para explorar o mundo!  
+          </p>
+        </div>
 
         </div>
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -122,8 +122,8 @@ const Login = () => {
               />
             </div>
           </div>
- {/* Link para cadastro */}
- <div className={styles.linkCadastro}>
+
+          <div className={styles.linkCadastro}>
             <Link to="/cadastro" className={styles.link}>
               Cadastrar-se
             </Link>

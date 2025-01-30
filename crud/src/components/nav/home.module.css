@@ -1,9 +1,13 @@
-.titulo {
+.logo {
+  width: 40%;
+  margin-left: 20%;
+}
+.logoDiv {
   margin-right: 80%;
 }
 .link{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .fundo{
-  background-color: rgb(8, 24, 165);
+  background-color: rgb(214, 218, 255);
 }

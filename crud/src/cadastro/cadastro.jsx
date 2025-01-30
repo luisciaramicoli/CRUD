@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { FaLock, FaEnvelope, FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEnvelope, FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
 import styles from "./cadastro.module.css"; // Importando o CSS modular
 import { Spin } from "antd";
 
@@ -200,26 +200,23 @@ const Cadastro = () => {
                 Data de Nascimento:
               </label>
               <input
-  className={styles.inputdata}
-  type="date"
-  id="data_nascimento"
-  name="data_nascimento"
-  value={formData.data_nascimento}
-  onChange={handleChange}
-  required
-/>
+                className={styles.inputdata}
+                type="date"
+                id="data_nascimento"
+                name="data_nascimento"
+                value={formData.data_nascimento}
+                onChange={handleChange}
+                required
+              />
 
             </div>
 
-           
-
-            {/* Link para login */}
             <div className={styles.linkCadastro}>
               <Link to="/login" className={styles.link}>
                 Já tem uma conta? Faça login
               </Link>
             </div>
- {error && <div className={styles.error}>{error}</div>}
+            {error && <div className={styles.error}>{error}</div>}
             <div className={styles.input}>
               {!loading ? (
                 <button type="submit">Cadastrar</button>

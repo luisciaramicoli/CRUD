@@ -55,5 +55,67 @@
     align-items: center;
     width: 30%;
   }
-
+  .informacoesPonto {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a intensidade da sombra */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .informacoesPonto h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .informacoesPonto p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .informacoesPonto p strong {
+    font-weight: bold;
+  }
+  
+  .infoLabel {
+    font-weight: 600;
+    color: #007bff;
+  }
+  
+  .infoValue {
+    color: #444;
+    margin-left: 5px;
+  }
+  td{
+    cursor: pointer;
+  }
+  .closeButton {
+    background-color: #ff4d4d; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  .closeButton:hover {
+    background-color: #ff1a1a; /* Cor de fundo mais escura ao passar o mouse */
+  }
+  .noResultsMessage {
+    color: #ff4d4d; /* Cor do texto em vermelho */
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+  }
   

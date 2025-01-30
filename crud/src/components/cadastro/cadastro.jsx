@@ -47,7 +47,7 @@ function CadastroPonto() {
             logradouro: data.logradouro,
             bairro: data.bairro,
             cidade: data.localidade,
-            estado_id: estados.find((estado) => estado.sigla === data.uf)?.estado_id || "", // Achar o estado pelo sigla
+            estado_id: estados.find((estado) => estado.sigla === data.uf)?.estado_id || "", 
           }));
         } else {
           setError("CEP inválido");
