@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as  Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "./home.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importação do CSS da AOS
 import { FaUmbrellaBeach, FaPlane, FaMapMarkedAlt, FaHotel } from "react-icons/fa";
+
+
 
 function LandingPage() {
   const [scrollY, setScrollY] = useState(0);
@@ -27,11 +29,12 @@ function LandingPage() {
 
   return (
     <div className={styles.page}>
+      {/* Primeira seção */}
       <div className={styles.primeiro} data-aos="fade-up">
         <div className={styles.Titulo}>
           Simplifique sua viajem com tecnologia de ponta
           <p className={styles.subTitulo}>
-            Transforme sua viajem com soluções inteligentes
+            Transforme sua viajem com soluções inteligentes 
           </p>
           <div className={styles.botoes}>
             <button
@@ -82,6 +85,7 @@ function LandingPage() {
         </div>
       </section>
 
+     {/* Avaliações */}
      <section className={styles.avaliacoes} data-aos="fade-up">
         <h2 className={styles.sectionTitle}>O que Nossos Viajantes Dizem</h2>
         <div className={styles.cardsContainer}>
@@ -100,7 +104,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
-
+      {/* Funcionamento */}
       <div className={styles.funcionamento} data-aos="fade-up">
         <h2 className={styles.titulo3}>Como funciona</h2>
         <div className={styles.imgContainer}>
@@ -118,6 +122,7 @@ function LandingPage() {
         </div>
       </div>
 
+      {/* Rodapé */}
       <footer className={`${styles.rodape} ${styles.rodapeBackground}`} id="contato" data-aos="fade-up">
         <h3 className={styles.contato}>Entre em contato</h3>
         <div className={styles.infoContato}>
